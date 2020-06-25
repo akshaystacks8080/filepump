@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from flask import request 
 app = Flask(__name__,)
 
 @app.route('/')
@@ -9,9 +10,15 @@ def hello_world():
 def home_handler():
     return render_template("home.html")
 
-@app.route("/signup")
+@app.route("/signup",  methods=['GET','POST'])
 def signup():
-    return "This is the signup page"
+    if request.method =="POST":
+        name = request.form['name']
+        email = request.form['email']
+        password = request.form['password']
+        print(name,email,password)
+        return render_template('signup.html',message="Data Recieved")
+    return render_template("/signup.html", message="")
 
 @app.route("/login")
 def login():
