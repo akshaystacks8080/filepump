@@ -1,3 +1,58 @@
-html{
-        background-color: purple;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: wheat;
+  font-family: "Montserrat", sans-serif;
+}
+
+.signup_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid black; */
+  padding: 20px;
+}
+
+.heading {
+  /* border: 1px solid orangered; */
+  margin-bottom: 10px;
+}
+
+.form {
+  /* border: 1px solid brown; */
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_element {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  margin-bottom: 20px;
+}
+
+.form_element > label {
+  padding: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.form_element > input {
+  padding: 10px 15px;
+  font-size: medium;
+  outline: none;
+}
+
+.form_button {
+  padding: 10px;
+  font-size: larger;
+  text-transform: uppercase;
 }
