@@ -1,33 +1,37 @@
-
 <html>
-    <head>
-        <meta name="viewport" content="width=device=width, initial=scale=1">
-        <title> Login for Filepump</title>
-        <link rel="stylesheet" href="{{url_for('static',filename='style.css') }}">    
-    </head>
-    
-    
-    <body>
-        <div class="login_block">
-            <form action="/login" method="post">
-            
-                <div class="form_element">
-                    <label for="email">Email Address</label>
-                    <input type="text" name="email">
-                </div>
-        
-                <div class="form_element">
-                    <label for="password">Password</label>
-                    <input type="password" name="password">
-                </div>
-                <button type="submit">Submit</button>
-                <input type="button" onclick="location.href='https://accounts.google.com/';" value="Google Login" />
-                <input type="button" onclick="location.href='https://www.facebook.com/';" value="Facebook Login" /> 
-        
-            </form>
+  <head>
+    <meta name="viewport" content="width=device=width, initial=scale=1" />
+    <title>Login for Filepump</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css') }}" />
+  </head>
+
+  <body>
+    <div class="login_block">
+      <form action="/login" method="post">
+        <div class="form_element">
+          <label for="email">Email Address</label>
+          <input type="text" name="email" />
         </div>
-        <h3>  {{ message }} </h3>
-    
-        <script src="{{url_for('static',filename='main.js') }}"></script>
-    </body>
-    </html>
+
+        <div class="form_element">
+          <label for="password">Password</label>
+          <input type="password" name="password" />
+        </div>
+        <button type="submit">Submit</button>
+        <input
+          type="button"
+          onclick="location.href='https://accounts.google.com/';"
+          value="Google Login"
+        />
+        <input
+          type="button"
+          onclick="location.href='https://www.facebook.com/';"
+          value="Facebook Login"
+        />
+      </form>
+    </div>
+    <h3>{{ message }}</h3>
+
+    <script src="{{url_for('static',filename='main.js') }}"></script>
+  </body>
+</html>

@@ -1,23 +1,22 @@
 <html>
-<head>
-    <meta name="viewport" content="width=device=width, initial=scale=1">
-    <title> Filepump</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='style.css') }}">    
-</head>
+  <head>
+    <meta name="viewport" content="width=device=width, initial=scale=1" />
+    <title>Filepump</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css') }}" />
+  </head>
 
-
-<body>
-    <div class ="info_block">
-        <h1>Filepump</h1>
-        <p>Filepump is a hosting service</p>
-        <p>Upload your files</p>
+  <body>
+    <div class="info_block">
+      <h1>Filepump</h1>
+      <p>Filepump is a hosting service</p>
+      <p>Upload your files</p>
     </div>
     <div class="cta_block">
-        <button onclick="signupClick()" class="btn_signup">Sign Up</button>
-        <button onclick="loginClick()" class="btn_login">Login</button>
-        <button onclick="aboutClick()" class="btn_about">About</button>
+      <button onclick="signupClick()" class="btn_signup">Sign Up</button>
+      <button onclick="loginClick()" class="btn_login">Login</button>
+      <button onclick="aboutClick()" class="btn_about">About</button>
     </div>
 
     <script src="{{url_for('static',filename='main.js') }}"></script>
-</body>
+  </body>
 </html>
