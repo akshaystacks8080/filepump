@@ -20,9 +20,15 @@ def signup():
         return render_template('signup.html',message="Data Recieved")
     return render_template("/signup.html", message="")
 
-@app.route("/login")
+@app.route("/login", methods=['GET','POST'])
 def login():
-    return "This is the login page"
+    if request.method =="POST":
+        email = request.form['email']
+        password = request.form['password']
+        print(email,password)
+        return render_template('login.html',message="Logged In Sucessfully")
+    return render_template("/login.html", message="")
+    
 
 @app.route("/about")
 def about():   
