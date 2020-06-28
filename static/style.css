@@ -18,6 +18,15 @@ html {
   padding: 20px;
 }
 
+.login_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid black; */
+  padding: 20px;
+}
+
 .heading {
   /* border: 1px solid orangered; */
   margin-bottom: 10px;
