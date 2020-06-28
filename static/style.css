@@ -91,3 +91,18 @@ html {
   justify-content: space-around;
   width: 100%;
 }
+
+.btn_classic {
+  background-color: white;
+  font-size: large;
+  border: 1px solid black;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: all 0.2s ease-in;
+}
+
+.btn_classic:hover {
+  background-color: black;
+  color: white;
+}
