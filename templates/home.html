@@ -6,17 +6,24 @@
   </head>
 
   <body>
-    <div class="info_block">
-      <h1>Filepump</h1>
-      <p>Filepump is a hosting service</p>
-      <p>Upload your files</p>
+    <div class="info_container">
+      <div class="info_block">
+        <h1 class="info_block_header">Filepump</h1>
+        <p class="info_block_para">Filepump is a hosting service</p>
+        <p class="info_block_para">Upload your files</p>
+      </div>
+      <div class="cta_block">
+        <button class="btn_classic" onclick="signupClick()" id="btn_signup">
+          Sign Up
+        </button>
+        <button class="btn_classic" onclick="loginClick()" id="btn_login">
+          Login
+        </button>
+        <button class="btn_classic" onclick="aboutClick()" id="btn_about">
+          About
+        </button>
+      </div>
     </div>
-    <div class="cta_block">
-      <button onclick="signupClick()" class="btn_signup">Sign Up</button>
-      <button onclick="loginClick()" class="btn_login">Login</button>
-      <button onclick="aboutClick()" class="btn_about">About</button>
-    </div>
-
     <script src="{{url_for('static',filename='main.js') }}"></script>
   </body>
 </html>

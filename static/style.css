@@ -65,3 +65,29 @@ html {
   font-size: larger;
   text-transform: uppercase;
 }
+
+.info_container {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info_block {
+  border: 1px solid black;
+  border-style: dotted;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.cta_block {
+  border: 1px solid red;
+  border-style: groove;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
