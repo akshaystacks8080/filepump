@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask import request
+import authentication
 app = Flask(__name__,)
 
 
@@ -19,7 +20,8 @@ def signup():
         name = request.form['name']
         email = request.form['email']
         password = request.form['password']
-        print(name, email, password)
+        authentication.saveUserInfoToFile(
+            {'name': name, 'email': email, 'password': password})
         return render_template('signup.html', message="Data Recieved")
     return render_template("/signup.html", message="")
 
