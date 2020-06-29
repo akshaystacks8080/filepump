@@ -118,3 +118,9 @@ html {
   background-color: black;
   color: white;
 }
+
+.message_block {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
