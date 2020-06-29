@@ -32,7 +32,12 @@ def login():
         email = request.form['email']
         password = request.form['password']
         print(email, password)
-        return render_template('login.html', message="Logged In Sucessfully")
+        flag = authentication.checkCredentials(
+            {'email': email, 'password': password})
+        message = "Login Successful"
+        if flag == False:
+            message = "Login Failed"
+        return render_template('login.html', message=message)
     return render_template("/login.html", message="")
 
 
