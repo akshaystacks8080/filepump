@@ -21,3 +21,18 @@ def checkCredentials(userdata):
             if email == curEmail and password == curPassword:
                 status = True
     return status
+
+
+def checkEmail(email):
+    status = False
+    try:
+        dataFile = open("userdata.txt", "r")
+        lines = dataFile.readlines()
+        for line in lines:
+            lineName, lineEmail, linePassword = line.split('\t')
+        if email == lineEmail:
+            status = True
+        dataFile.close()
+    except:
+        print("Unable to read file")
+    return status
