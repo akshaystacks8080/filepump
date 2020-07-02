@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask import request
+from flask import redirect, url_for
 import authentication
 app = Flask(__name__,)
 
@@ -17,13 +18,14 @@ def home_handler():
 @app.route("/signup",  methods=['GET', 'POST'])
 def signup():
     if request.method == "POST":
+        redirectUrl = url_for('dashboard')
         name = request.form['name']
         email = request.form['email']
         password = request.form['password']
         authentication.saveUserInfoToFile(
             {'name': name, 'email': email, 'password': password})
-        return render_template('signup.html', message="Data Recieved")
-    return render_template("/signup.html", message="")
+        return redirect(redirectUrl)
+    return render_template("signup.html", message="")
 
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -40,11 +42,18 @@ def login():
         elif emailFlag == True and creditentialsFlag == False:
             message = "Invalid Password"
         elif creditentialsFlag == True:
+            redirectUrl = url_for('dashboard')
             message = "Login Successfull"
+            return redirect(redirectUrl)
         return render_template('login.html', message=message)
-    return render_template("/login.html", message="")
+    return render_template("login.html", message="")
 
 
 @app.route("/about")
 def about():
     return "This is the about page"
+
+
+@app.route("/dashboard")
+def dashboard():
+    return render_template("/dashboard.html")
