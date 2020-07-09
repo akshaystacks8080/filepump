@@ -1,8 +1,18 @@
+import os
 from flask import Flask, render_template
 from flask import request
 from flask import redirect, url_for
 import authentication
+import config
 app = Flask(__name__,)
+
+# Load config
+devEnvironment = os.environ.get('FLASK_ENV')
+print("FLASK_ENV = ", devEnvironment)
+if devEnvironment == "development":
+    app.config.from_object(config.DevelopmentConfig())
+elif devEnvironment == "production":
+    app.config.from_object(config.ProductionConfig())
 
 
 @app.route('/')
