@@ -15,3 +15,18 @@ function aboutClick() {
   let newLink = curLink + "about";
   window.location.href = newLink;
 }
+
+function fileupload() {
+  let input = document.createElement("input");
+  input.type = "file";
+
+  input.onchange = (e) => {
+    //console.log(e.target.files[0]);
+    let file = e.target.files[0];
+    let formData = new FormData();
+    formData.append("uploadedFile", file);
+    fetch("/upload", { method: "POST", body: formData });
+  };
+
+  input.click();
+}

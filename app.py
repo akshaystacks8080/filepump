@@ -2,9 +2,14 @@ import os
 from flask import Flask, render_template
 from flask import request
 from flask import redirect, url_for
+from werkzeug.utils import secure_filename
 import authentication
 import config
 app = Flask(__name__,)
+
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_FOLDER = os.path.join(APP_ROOT, "files")
+app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 # Load config
 devEnvironment = os.environ.get('FLASK_ENV')
@@ -67,3 +72,13 @@ def about():
 @app.route("/dashboard")
 def dashboard():
     return render_template("/dashboard.html")
+
+
+@app.route("/upload", methods=["POST"])
+def upload():
+    if request.method == "POST":
+        file = request.files['uploadedFile']
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        print(file)
+    return "File Uploaded"
