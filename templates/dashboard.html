@@ -23,7 +23,7 @@
             {% for file in files %}
             <div class="file">
               <h2>{{file}}</h2>
-              <a href="#" class="btn_file_download">Download</a>
+              <a href={{"/uploads/" + file}} class="btn_file_download">Download</a>
             </div>
             {% endfor %}
           </div>
