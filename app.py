@@ -78,7 +78,7 @@ def dashboard():
     onlyfiles = [f for f in listdir(
         UPLOAD_FOLDER) if isfile(join(UPLOAD_FOLDER, f))]
     print(onlyfiles)
-    return render_template("/dashboard.html")
+    return render_template("/dashboard.html", files=onlyfiles)
 
 
 @app.route("/upload", methods=["POST"])

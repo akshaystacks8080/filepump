@@ -150,3 +150,18 @@ html {
 #icon-upload {
   margin-left: 1rem;
 }
+
+.files_block {
+  padding: 2rem;
+}
+
+.file {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.btn_file_download {
+  font-size: 2rem;
+}
