@@ -5,6 +5,10 @@ from flask import redirect, url_for
 from werkzeug.utils import secure_filename
 import authentication
 import config
+from os import listdir
+from os.path import isfile, join
+
+
 app = Flask(__name__,)
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -71,6 +75,9 @@ def about():
 
 @app.route("/dashboard")
 def dashboard():
+    onlyfiles = [f for f in listdir(
+        UPLOAD_FOLDER) if isfile(join(UPLOAD_FOLDER, f))]
+    print(onlyfiles)
     return render_template("/dashboard.html")
 
 
