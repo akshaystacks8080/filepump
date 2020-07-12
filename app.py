@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template
 from flask import request
 from flask import redirect, url_for
+from flask import send_from_directory
 from werkzeug.utils import secure_filename
 import authentication
 import config
@@ -89,3 +90,8 @@ def upload():
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         print(file)
     return "File Uploaded"
+
+
+@app.route('/uploads/<path:filename>', methods=['GET', 'POST'])
+def download(filename):
+    return send_from_directory(directory=app.config['UPLOAD_FOLDER'], filename=filename)
