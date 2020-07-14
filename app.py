@@ -1,4 +1,6 @@
 import os
+from os import listdir
+from os.path import isfile, join
 from flask import Flask, render_template
 from flask import request
 from flask import redirect, url_for
@@ -6,8 +8,6 @@ from flask import send_from_directory
 from werkzeug.utils import secure_filename
 import authentication
 import config
-from os import listdir
-from os.path import isfile, join
 
 
 app = Flask(__name__,)
